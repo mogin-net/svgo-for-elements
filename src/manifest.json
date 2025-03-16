@@ -1,17 +1,53 @@
 {
   "$schema": "https://raw.githubusercontent.com/sketch-hq/SketchAPI/develop/docs/sketch-plugin-manifest-schema.json",
   "icon": "icon.png",
+  "compatibleVersion": "84",
+  "bundleVersion": 1,
+  "identifier": "net.mogin.sketch.plugins.svgo-compressor-for-elements",
+  "name": "SVGO for Elements",
+  "description": "Compress SVG assets using SVGO. Ensure currentColor for Elements.\n\nThis plugin is based on SVGO Compressor for Sketch.",
+  "author": "Pt. Mogin Technology Terpadu",
   "commands": [
     {
-      "name": "my-command",
-      "identifier": "svgo-for-elements.my-command-identifier",
-      "script": "./my-command.js"
+      "name": "Toggle 'Prettify'",
+      "identifier": "configPrettify",
+      "script": "./settings.js",
+      "handler": "configPrettify"
+    },
+    {
+      "name": "Toggle 'Remove Dimensions'",
+      "identifier": "configRemoveDimensions",
+      "script": "./settings.js",
+      "handler": "configRemoveDimensions"
+    },
+    {
+      "name": "Output",
+      "identifier": "configuration",
+      "shortcut": "ctrl alt E",
+      "script": "./settings.js",
+      "handler": "configuration"
+    },
+    {
+      "name": "About",
+      "identifier": "about",
+      "scope": "application",
+      "script": "./programm.js",
+      "handlers": {
+        "run": "about",
+        "actions": {
+          "ExportSlices": "compress",
+          "Export": "compress"
+        }
+      }
     }
   ],
   "menu": {
-    "title": "svgo-for-elements",
+    "title": "SVGO Compressor for Elements",
     "items": [
-      "svgo-for-elements.my-command-identifier"
+      "configPrettify",
+      "configRemoveDimensions",
+      "configuration",
+      "about"
     ]
   }
 }

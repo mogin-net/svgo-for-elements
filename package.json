@@ -5,6 +5,10 @@
   "engines": {
     "sketch": ">=49.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mogin-net/svgo-for-elements.git"
+  },
   "skpm": {
     "name": "svgo-for-elements",
     "manifest": "src/manifest.json",
@@ -21,7 +25,12 @@
     "postinstall": "npm run build && skpm-link"
   },
   "devDependencies": {
-    "@skpm/builder": "^0.9.5"
+    "@skpm/builder": "^0.9.5",
+    "serialize-javascript": "6.0.0"
   },
-  "author": "Karangetang <74990725+Karangetang@users.noreply.github.com>"
+  "author": "Pt. Mogin Technology Terpadu",
+  "dependencies": {
+    "@skpm/fs": "^0.2.6",
+    "svgo": "^2.8.0"
+  }
 }
